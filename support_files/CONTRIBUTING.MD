@@ -2,7 +2,7 @@
 
 ## Testing
 
-To run tests, use `npm run test` or `npm run test:w` for watch mode. This lets you run tests while
+To run tests, use `npm run test` or `npm run test:w` for watch mode. This lets you run tests while you code.
 
 ## Debugging
 

@@ -69,6 +69,21 @@ browser.runtime.onMessage.addListener(
   }
 );
 
+//@ts-ignore
+browser.runtime.onInstalled.addListener(async ({ reason, temporary }) => {
+  //if (temporary) return; // skip during development
+
+  if (reason == "install") {
+    console.log("this actually ran");
+    //@ts-ignore
+    const url = browser.runtime.getURL(
+      "https://100automations.github.io/github-story-points-calculator/#steps"
+    );
+    //@ts-ignore
+    await browser.tabs.create({ url });
+  }
+});
+
 getData({ rows: [], currentOn: null })
   .then((data: data) => {
     mutationListener(data.rows[data.currentOn].text, () => {});
